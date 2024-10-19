@@ -1,0 +1,2 @@
+TestIndy is a public health initiative primarily focused on providing free, at-home HIV testing kits to residents of Marion County, Indiana. It allows individuals to order a discreet self-test kit, which includes the OraQuick® In-Home HIV Test. This test can detect HIV-1 and HIV-2 using oral fluid and delivers results in just 20 minutes. 
+The initiative is aimed at increasing awareness of HIV status, supporting early detection, and encouraging individuals to make informed health decisions. 
