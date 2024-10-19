@@ -1,0 +1,421 @@
+
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Web.Common.PublishedModels;
+
+@{
+    Layout = null;
+       
+   var logoImage = Umbraco.Media(1664);
+   
+    
+ }
+
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en">
+<head>
+    <title>HIV FAQ</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/TestIndy/nicepage.css" media="screen">
+    <link rel="stylesheet" href="/css/TestIndy/dialog-styles.css" media="screen">
+    <link rel="stylesheet" href="/css/TestIndy/HIV-FAQ.css" media="screen">
+    <link rel="stylesheet" href="/css/TestIndy/index.css" media="screen">
+    <script class="u-script" type="text/javascript" src="/scripts/TestIndy/main.js"></script>
+    <script class="u-script" type="text/javascript" src="/scripts/TestIndy/jquery.js" defer=""></script>
+    
+    <script class="u-script" type="text/javascript" src="/scripts/TestIndy/nicepage.js" defer=""></script>
+    <script>
+  // Functionality to expand/collapse the accordion
+  document.querySelectorAll('.u-accordion-link').forEach((accordion) => {
+    accordion.addEventListener('click', function() {
+      const pane = this.nextElementSibling;
+      const iconPath = this.querySelector('#icon-path-f600');
+      
+      // Toggle aria-expanded attribute
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !isExpanded);
+
+      // Toggle the display of the content pane
+      if (pane.style.display === 'none' || pane.style.display === '') {
+        pane.style.display = 'block';  // Expand
+        iconPath.setAttribute('d', 'M384 184h-176v-176h-80v176h-176v80h176v176h80v-176h176z');  // Change icon to "minus" sign
+      } else {
+        pane.style.display = 'none';  // Collapse
+        iconPath.setAttribute('d', 'M272 184c-4.4 0-8-3.6-8-8v-176h-80v176c0 4.4-3.6 8-8 8h-176v80h176c4.4 0 8 3.6 8 8v176h80v-176c0-4.4 3.6-8 8-8h176v-80z');  // Change icon to "plus" sign
+      }
+    });
+  });
+</script>
+
+
+    <meta name="theme-color" content="#1f86e7">
+    <meta property="og:title" content="Home">
+    <meta property="og:type" content="website">
+</head>
+    <body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-header" id="sec-2951"><div class="u-clearfix u-sheet u-sheet-1">
+        <a href="#" class="u-image u-logo u-image-1" data-image-width="1257" data-image-height="400">
+          <img src="@logoImage.Url()" class="u-logo-image u-logo-image-1">
+        </a>
+        <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
+          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700;">
+            <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+              <svg class="u-svg-link" viewBox="0 0 24 24"><use xlink:href="#menu-hamburger"></use></svg>
+              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</g></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            <ul class="u-custom-font u-heading-font u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-50 u-text-hover-palette-2-base" href="index.html" style="padding: 10px 20px;">Home</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-50 u-text-hover-palette-2-base" href="Order-Your-Kit.html" style="padding: 15px; background-color: #f80f05; color: #fff !important;">Order Your Kit</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-50 u-text-hover-palette-2-base" href="HIV-FAQ.html" style="padding: 10px 20px;">HIV FAQ</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-50 u-text-hover-palette-2-base" href="What-is-Prep.html" style="padding: 10px 20px;">What is PrEP</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-50 u-text-hover-palette-2-base" href="Resources.html" style="padding: 10px 20px;">Resources</a>
+</li></ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="index.html">Home</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Order-Your-Kit.html" style="padding: 15px !important; background-color: #f80f05; color: #fff !important;">Order Your Kit</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="HIV-FAQ.html">HIV FAQ</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="What-is-Prep.html">What is PrEP</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Resources.html">Resources</a>
+</li></ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+      </div>
+    </header> 
+    
+    <section class="u-carousel u-slide u-block-8e7f-1" id="carousel-c7bc" data-image-width="1254" data-image-height="300" data-interval="5000" data-u-ride="carousel">
+    <ol class="u-carousel-indicators u-block-8e7f-5">
+        <li data-u-target="#carousel-c7bc" data-u-slide-to="0" class="u-active u-grey-30"></li>
+    </ol>
+    <div class="u-carousel-inner" role="listbox" style="">
+        <div class="u-active u-align-center u-carousel-item u-clearfix u-image u-shading u-section-1-1" style="position: relative; z-index: 1; background-image: url(''); background-size: cover; background-position: center; height: 350px; position: relative;">
+            <!-- Overlay to make image less bright -->
+            <div style="background-color: rgba(0, 0, 0, 0.5); position: absolute; top: 0; left: 0; right: 0; bottom: 0;"></div>
+            
+            <!-- Text centered and bold above the image -->
+            <div class="u-clearfix u-sheet u-sheet-1" style="position: relative; z-index: 1; padding-top: 50px; padding-right: 50px;">
+                <h1 class="u-align-center u-text u-title u-text-1" style="color: white; font-weight: bold;">
+                    <span style="font-size: 6rem;">HIV</span>
+                    <br>
+                    <br>
+                    <span style="font-size: 1.875rem;">Frequently asked questions</span>
+                </h1>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Carousel Controls -->
+    <a class="u-absolute-vcenter u-carousel-control u-carousel-control-prev u-text-grey-30 u-block-8e7f-3" href="#carousel-c7bc" role="button" data-u-slide="prev">
+        <span aria-hidden="true">
+            <svg viewBox="0 0 451.847 451.847"><path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
+                c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
+                c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path></svg>
+        </span>
+        <span class="sr-only">Previous</span>
+    </a>
+    
+    <a class="u-absolute-vcenter u-carousel-control u-carousel-control-next u-text-grey-30 u-block-8e7f-4" href="#carousel-c7bc" role="button" data-u-slide="next">
+        <span aria-hidden="true">
+            <svg viewBox="0 0 451.846 451.847"><path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
+                L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0
+                l194.287,194.284c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path></svg>
+        </span>
+        <span class="sr-only">Next</span>
+    </a>
+</section>
+
+    <section class="u-align-center u-clearfix u-container-align-center u-image u-shading u-section-2" id="sec-8a96" style="background-image: 
+    linear-gradient(0deg, rgba(31, 134, 231, 0.7), rgba(255, 255, 255, 0.7)), url('/media/mhobyelw/group-of-five-smiling-african-american-men-and-wom-2022-05-12-00-28-31-utc-large.jpg'); 
+                background-size: 130% 100%;
+                background-position: center -50px;
+                margin-top: -50px;
+                padding: 20px; 
+                color: #333; 
+                height: 1200px
+                text-align: center; 
+                display: flex; 
+                justify-content: center; 
+                position: relative;
+                z-index: -1;
+                background-position: top center;
+                align-items: flex-start;
+                margin-bottom: 80px;
+                align-items: center;"" data-image-width="1220" data-image-height="1200">
+<div class="u-clearfix u-sheet u-sheet-1" style="position: relative; top: -140px; padding-top: 0; margin-top: -140px;">
+  <div class="u-list u-list-1" style="padding-top: 0;">
+    <div class="u-repeater u-repeater-1" style="padding-top: 0;"></div>
+  </div>
+  
+<div class="u-expanded-width u-list u-list-2" style="margin-top: -30px;">
+  <div class="u-repeater u-repeater-2" style="padding-top: 0;">
+    <div class="u-container-style u-list-item u-repeater-item">
+      <div class="u-container-layout u-similar-container u-container-layout-1" style="padding-top: 0;">
+        <div class="custom-expanded u-accordion u-faq u-spacing-10 u-accordion-1" style="margin-top: 0;">
+          
+          <div class="u-accordion-item">
+            <a 
+               class="u-accordion-link u-button-style u-white u-accordion-link-1" 
+               id="link-accordion-f600" 
+               aria-controls="accordion-f600" 
+               aria-expanded="false" 
+               style="display: flex; justify-content: space-between; align-items: center; padding: 10px; border: 1px solid #ccc; cursor: pointer; transition: background-color 0.3s ease;" 
+               onmouseover="this.style.backgroundColor='#007BFF'; this.style.color='white';" 
+               onmouseout="this.style.backgroundColor=''; this.style.color='';">
+              
+              <span class="u-accordion-link-text">What is HIV?</span>
+              
+              <span class="u-accordion-link-icon u-icon u-text-palette-1-light-2 u-icon-1">
+                <!-- Only one SVG for the "+" sign -->
+                <svg class="u-svg-content" viewBox="0 0 448 448" id="svg-bc2c" style="width: 20px; height: 20px;">
+                  <path class="icon-path" d="M272 184c-4.4 0-8-3.6-8-8v-176h-80v176c0 4.4-3.6 8-8 8h-176v80h176c4.4 0 8 3.6 8 8v176h80v-176c0-4.4 3.6-8 8-8h176v-80z"></path>
+                </svg>
+              </span>
+            </a>
+            
+            <div class="u-accordion-pane u-container-style u-white u-accordion-pane-1" id="accordion-f600" style="display: none; padding: 10px;">
+              <div class="u-container-layout u-container-layout-2">
+                <div class="fr-view u-clearfix u-rich-text u-text">
+                  <p>HIV (human immunodeficiency virus) is a virus that attacks the body’s immune system...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+                  <div class="u-accordion-item">
+                    <a class="u-accordion-link u-active-palette-1-base u-button-style u-hover-palette-1-base u-white u-accordion-link-2" id="link-accordion-72f4" aria-controls="accordion-72f4" aria-selected="false">
+                      <span class="u-accordion-link-text"> How do I know if I have HIV?</span><span class="u-accordion-link-icon u-icon u-text-palette-1-light-2 u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 448 448" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-6cae"></use></svg><svg class="u-svg-content" viewBox="0 0 448 448" id="svg-6cae" style=""><path d="m272 184c-4.417969 0-8-3.582031-8-8v-176h-80v176c0 4.417969-3.582031 8-8 8h-176v80h176c4.417969 0 8 3.582031 8 8v176h80v-176c0-4.417969 3.582031-8 8-8h176v-80zm0 0"></path></svg></span>
+                    </a>
+                    <div class="u-accordion-pane u-container-style u-white u-accordion-pane-2" id="accordion-72f4" aria-labelledby="link-accordion-72f4">
+                      <div class="u-container-layout u-container-layout-3">
+                        <div class="fr-view u-clearfix u-rich-text u-text">
+                          <p>The only way to know for sure whether you have HIV is to get tested. Knowing your HIV status helps you make healthy decisions to prevent getting or transmitting HIV. </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="u-accordion-item">
+                    <a class="u-accordion-link u-active-palette-1-base u-button-style u-hover-palette-1-base u-white u-accordion-link-3" id="link-accordion-854e" aria-controls="accordion-854e" aria-selected="false">
+                      <span class="u-accordion-link-text"> What are the symptoms of HIV?</span><span class="u-accordion-link-icon u-icon u-text-palette-1-light-2 u-icon-3"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 448 448" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-c34c"></use></svg><svg class="u-svg-content" viewBox="0 0 448 448" id="svg-c34c" style=""><path d="m272 184c-4.417969 0-8-3.582031-8-8v-176h-80v176c0 4.417969-3.582031 8-8 8h-176v80h176c4.417969 0 8 3.582031 8 8v176h80v-176c0-4.417969 3.582031-8 8-8h176v-80zm0 0"></path></svg></span>
+                    </a>
+                    <div class="u-accordion-pane u-container-style u-white u-accordion-pane-3" id="accordion-854e" aria-labelledby="link-accordion-854e">
+                      <div class="u-container-layout u-container-layout-4">
+                        <div class="fr-view u-clearfix u-rich-text u-text">
+                          <p id="isPasted">Some people have flu-like symptoms within 2 to 4 weeks after infection (called acute HIV infection). These symptoms may last for a few days or several weeks. Possible symptoms include.</p>
+                          <table border="0" style="box-sizing: border-box; border-collapse: collapse; border-spacing: 0px; border: 1px none rgb(238, 238, 238); margin: 0px 0px 15px; text-align: left; width: 421px; color: rgb(102, 102, 102); font-family: Roboto, Helvetica, Arial, Lucida, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 500; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+                            <tbody style="box-sizing: border-box;">
+                              <tr style="box-sizing: border-box;">
+                                <td style="box-sizing: border-box; border-top: 1px solid rgb(238, 238, 238); padding: 6px 24px; width: 210px;">
+                                  <ul style="box-sizing: border-box; margin: 0px; padding: 0px 0px 23px 1em; border: 0px; outline: 0px; font-size: 16px; text-size-adjust: 100%; vertical-align: baseline; background: transparent; list-style: disc; line-height: 26px;">
+                                    <li style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 16px; text-size-adjust: 100%; vertical-align: baseline; background: transparent;">Fever</li>
+                                    <li style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 16px; text-size-adjust: 100%; vertical-align: baseline; background: transparent;">Chills</li>
+                                    <li style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 16px; text-size-adjust: 100%; vertical-align: baseline; background: transparent;">Rash</li>
+                                    <li style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 16px; text-size-adjust: 100%; vertical-align: baseline; background: transparent;">Fatigue</li>
+                                  </ul>
+                                </td>
+                                <td style="box-sizing: border-box; border-top: 1px solid rgb(238, 238, 238); padding: 6px 24px; width: 210px;">
+                                  <ul style="box-sizing: border-box; margin: 0px; padding: 0px 0px 23px 1em; border: 0px; outline: 0px; font-size: 16px; text-size-adjust: 100%; vertical-align: baseline; background: transparent; list-style: disc; line-height: 26px;">
+                                    <li style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 16px; text-size-adjust: 100%; vertical-align: baseline; background: transparent;">Night Sweats</li>
+                                    <li style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 16px; text-size-adjust: 100%; vertical-align: baseline; background: transparent;">Muscle Aches</li>
+                                    <li style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 16px; text-size-adjust: 100%; vertical-align: baseline; background: transparent;">Sore Throat</li>
+                                    <li style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 16px; text-size-adjust: 100%; vertical-align: baseline; background: transparent;">Swollen Lymph Nodes</li>
+                                    <li style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 16px; text-size-adjust: 100%; vertical-align: baseline; background: transparent;">Mouth Ulcers</li>
+                                  </ul>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="u-accordion-item">
+                    <a class="u-accordion-link u-active-palette-1-base u-button-style u-hover-palette-1-base u-white u-accordion-link-4" id="link-1c53" aria-controls="1c53" aria-selected="false">
+                      <span class="u-accordion-link-text"> How is HIV passed from one person to another?</span><span class="u-accordion-link-icon u-icon u-text-palette-1-light-2 u-icon-4"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xlink:href="#svg-a6b6"></use></svg><svg class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-a6b6"><path d="M8,10.7L1.6,5.3c-0.4-0.4-1-0.4-1.3,0c-0.4,0.4-0.4,0.9,0,1.3l7.2,6.1c0.1,0.1,0.4,0.2,0.6,0.2s0.4-0.1,0.6-0.2l7.1-6
+	c0.4-0.4,0.4-0.9,0-1.3c-0.4-0.4-1-0.4-1.3,0L8,10.7z"></path></svg></span>
+                    </a>
+                    <div class="u-accordion-pane u-container-style u-white u-accordion-pane-4" id="1c53" aria-labelledby="link-1c53">
+                      <div class="u-container-layout u-container-layout-5">
+                        <div class="fr-view u-clearfix u-rich-text u-text">
+                          <p>HIV (human immunodeficiency virus) is a virus that attacks the body’s immune system. If HIV is not treated, it can lead to AIDS (acquired immunodeficiency syndrome). There is currently no effective cure. Once people get HIV, they have it for life. With proper medical care, HIV can be controlled. People with HIV who get effective HIV treatment can live long, healthy lives and protect their partners. </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="u-accordion-item">
+                    <a class="u-accordion-link u-active-palette-1-base u-button-style u-hover-palette-1-base u-white u-accordion-link-5" id="link-535b" aria-controls="535b" aria-selected="false">
+                      <span class="u-accordion-link-text"> What body fluids transmit HIV?</span><span class="u-accordion-link-icon u-icon u-text-palette-1-light-2 u-icon-5"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xlink:href="#svg-915e"></use></svg><svg class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-915e"><path d="M8,10.7L1.6,5.3c-0.4-0.4-1-0.4-1.3,0c-0.4,0.4-0.4,0.9,0,1.3l7.2,6.1c0.1,0.1,0.4,0.2,0.6,0.2s0.4-0.1,0.6-0.2l7.1-6
+	c0.4-0.4,0.4-0.9,0-1.3c-0.4-0.4-1-0.4-1.3,0L8,10.7z"></path></svg></span>
+                    </a>
+                    <div class="u-accordion-pane u-container-style u-white u-accordion-pane-5" id="535b" aria-labelledby="link-535b">
+                      <div class="u-container-layout u-container-layout-6">
+                        <div class="fr-view u-clearfix u-rich-text u-text">
+                          <p>Only certain body fluids from a person who has HIV can transmit HIV. These fluids include:&nbsp;</p>
+                          <table border="0" style="box-sizing: border-box; border-collapse: collapse; border-spacing: 0px; border: 1px none rgb(238, 238, 238); margin: 0px 0px 15px; text-align: left; width: 421px; color: rgb(102, 102, 102); font-family: Roboto, Helvetica, Arial, Lucida, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 500; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+                            <tbody style="box-sizing: border-box;">
+                              <tr style="box-sizing: border-box;">
+                                <td style="box-sizing: border-box; border-top: 1px solid rgb(238, 238, 238); padding: 6px 24px; width: 210px;">
+                                  <ul style="box-sizing: border-box; margin: 0px; padding: 0px 0px 23px 1em; border: 0px; outline: 0px; font-size: 16px; text-size-adjust: 100%; vertical-align: baseline; background: transparent; list-style: disc; line-height: 26px;">
+                                    <li style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 16px; text-size-adjust: 100%; vertical-align: baseline; background: transparent;">Semen</li>
+                                    <li style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 16px; text-size-adjust: 100%; vertical-align: baseline; background: transparent;">Breast Milk</li>
+                                    <li style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 16px; text-size-adjust: 100%; vertical-align: baseline; background: transparent;">Vaginal Fluids</li>
+                                  </ul>
+                                </td>
+                                <td style="box-sizing: border-box; border-top: 1px solid rgb(238, 238, 238); padding: 6px 24px; width: 210px;">
+                                  <ul>
+                                    <li id="isPasted" style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 16px; text-size-adjust: 100%; vertical-align: baseline; background: transparent;">Rectal Fluids</li>
+                                    <li style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 16px; text-size-adjust: 100%; vertical-align: baseline; background: transparent;">Blood</li>
+                                    <li style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 16px; text-size-adjust: 100%; vertical-align: baseline; background: transparent;">Pre-cum</li>
+                                  </ul>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <p>These fluids must come in contact with a mucous membrane or damaged tissue or be directly injected into the bloodstream (from a needle or syringe) for transmission to occur. Mucous membranes are found inside the rectum, vagina, penis, and mouth.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="u-accordion-item">
+                    <a class="u-accordion-link u-active-palette-1-base u-button-style u-hover-palette-1-base u-white u-accordion-link-6" id="link-b7bc" aria-controls="b7bc" aria-selected="false">
+                      <span class="u-accordion-link-text"> Can HIV be transmitted from a mother to her baby?</span><span class="u-accordion-link-icon u-icon u-text-palette-1-light-2 u-icon-6"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xlink:href="#svg-f7ac"></use></svg><svg class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-f7ac"><path d="M8,10.7L1.6,5.3c-0.4-0.4-1-0.4-1.3,0c-0.4,0.4-0.4,0.9,0,1.3l7.2,6.1c0.1,0.1,0.4,0.2,0.6,0.2s0.4-0.1,0.6-0.2l7.1-6
+	c0.4-0.4,0.4-0.9,0-1.3c-0.4-0.4-1-0.4-1.3,0L8,10.7z"></path></svg></span>
+                    </a>
+                    <div class="u-accordion-pane u-container-style u-white u-accordion-pane-6" id="b7bc" aria-labelledby="link-b7bc">
+                      <div class="u-container-layout u-container-layout-7">
+                        <div class="fr-view u-clearfix u-rich-text u-text">
+                          <p>Answer. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id suscipit ex. Suspendisse rhoncus laoreet purus quis elementum. Phasellus sed efficitur dolor, et ultricies sapien. Quisque fringilla sit amet dolor commodo efficitur. Aliquam et sem odio. In ullamcorper nisi nunc, et molestie ipsum iaculis sit amet.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="u-container-style u-list-item u-repeater-item" style="position: relative; top: -1px; padding-top: 0; margin-top: -1px;>
+              <div class="u-container-layout u-similar-container u-container-layout-8">
+                <div class="custom-expanded u-accordion u-faq u-spacing-10 u-accordion-2">
+                  <div class="u-accordion-item">
+                    <a class="active u-accordion-link u-active-palette-1-base u-button-style u-hover-palette-1-base u-white u-accordion-link-7" id="link-accordion-f600" aria-controls="accordion-f600" aria-selected="true">
+                      <span class="u-accordion-link-text"> How well does HIV survive outside the body?</span><span class="u-accordion-link-icon u-icon u-text-palette-1-light-2 u-icon-7"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 448 448" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-02c8"></use></svg><svg class="u-svg-content" viewBox="0 0 448 448" id="svg-02c8" style=""><path d="m272 184c-4.417969 0-8-3.582031-8-8v-176h-80v176c0 4.417969-3.582031 8-8 8h-176v80h176c4.417969 0 8 3.582031 8 8v176h80v-176c0-4.417969 3.582031-8 8-8h176v-80zm0 0"></path></svg></span>
+                    </a>
+                    <div class="u-accordion-active u-accordion-pane u-container-style u-white u-accordion-pane-7" id="accordion-f600" aria-labelledby="link-accordion-f600">
+                      <div class="u-container-layout u-container-layout-9">
+                        <div class="fr-view u-clearfix u-rich-text u-text">
+                          <p>HIV (human immunodeficiency virus) is a virus that attacks the body’s immune system. If HIV is not treated, it can lead to AIDS (acquired immunodeficiency syndrome). There is currently no effective cure. Once people get HIV, they have it for life. With proper medical care, HIV can be controlled. People with HIV who get effective HIV treatment can live long, healthy lives and protect their partners.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="u-accordion-item">
+                    <a class="u-accordion-link u-active-palette-1-base u-button-style u-hover-palette-1-base u-white u-accordion-link-8" id="link-accordion-72f4" aria-controls="accordion-72f4" aria-selected="false">
+                      <span class="u-accordion-link-text"> How do I know if I have HIV?</span><span class="u-accordion-link-icon u-icon u-text-palette-1-light-2 u-icon-8"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 448 448" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-5721"></use></svg><svg class="u-svg-content" viewBox="0 0 448 448" id="svg-5721" style=""><path d="m272 184c-4.417969 0-8-3.582031-8-8v-176h-80v176c0 4.417969-3.582031 8-8 8h-176v80h176c4.417969 0 8 3.582031 8 8v176h80v-176c0-4.417969 3.582031-8 8-8h176v-80zm0 0"></path></svg></span>
+                    </a>
+                    <div class="u-accordion-pane u-container-style u-white u-accordion-pane-8" id="accordion-72f4" aria-labelledby="link-accordion-72f4">
+                      <div class="u-container-layout u-container-layout-10">
+                        <div class="fr-view u-clearfix u-rich-text u-text">
+                          <p>The only way to know for sure whether you have HIV is to get tested. Knowing your HIV status helps you make healthy decisions to prevent getting or transmitting HIV. </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="u-accordion-item">
+                    <a class="u-accordion-link u-active-palette-1-base u-button-style u-hover-palette-1-base u-white u-accordion-link-9" id="link-accordion-854e" aria-controls="accordion-854e" aria-selected="false">
+                      <span class="u-accordion-link-text"> What are the symptoms of HIV?</span><span class="u-accordion-link-icon u-icon u-text-palette-1-light-2 u-icon-9"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 448 448" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-ba8f"></use></svg><svg class="u-svg-content" viewBox="0 0 448 448" id="svg-ba8f" style=""><path d="m272 184c-4.417969 0-8-3.582031-8-8v-176h-80v176c0 4.417969-3.582031 8-8 8h-176v80h176c4.417969 0 8 3.582031 8 8v176h80v-176c0-4.417969 3.582031-8 8-8h176v-80zm0 0"></path></svg></span>
+                    </a>
+                    <div class="u-accordion-pane u-container-style u-white u-accordion-pane-9" id="accordion-854e" aria-labelledby="link-accordion-854e">
+                      <div class="u-container-layout u-container-layout-11">
+                        <div class="fr-view u-clearfix u-rich-text u-text">
+                          <p id="isPasted">Some people have flu-like symptoms within 2 to 4 weeks after infection (called acute HIV infection). These symptoms may last for a few days or several weeks. Possible symptoms include.</p>
+                          <table border="0" style="box-sizing: border-box; border-collapse: collapse; border-spacing: 0px; border: 1px none rgb(238, 238, 238); margin: 0px 0px 15px; text-align: left; width: 421px; color: rgb(102, 102, 102); font-family: Roboto, Helvetica, Arial, Lucida, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 500; letter-spacing: normal; orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+                            <tbody style="box-sizing: border-box;">
+                              <tr style="box-sizing: border-box;">
+                                <td style="box-sizing: border-box; border-top: 1px solid rgb(238, 238, 238); padding: 6px 24px; width: 210px;">
+                                  <ul style="box-sizing: border-box; margin: 0px; padding: 0px 0px 23px 1em; border: 0px; outline: 0px; font-size: 16px; text-size-adjust: 100%; vertical-align: baseline; background: transparent; list-style: disc; line-height: 26px;">
+                                    <li style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 16px; text-size-adjust: 100%; vertical-align: baseline; background: transparent;">Fever</li>
+                                    <li style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 16px; text-size-adjust: 100%; vertical-align: baseline; background: transparent;">Chills</li>
+                                    <li style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 16px; text-size-adjust: 100%; vertical-align: baseline; background: transparent;">Rash</li>
+                                    <li style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 16px; text-size-adjust: 100%; vertical-align: baseline; background: transparent;">Fatigue</li>
+                                  </ul>
+                                </td>
+                                <td style="box-sizing: border-box; border-top: 1px solid rgb(238, 238, 238); padding: 6px 24px; width: 210px;">
+                                  <ul style="box-sizing: border-box; margin: 0px; padding: 0px 0px 23px 1em; border: 0px; outline: 0px; font-size: 16px; text-size-adjust: 100%; vertical-align: baseline; background: transparent; list-style: disc; line-height: 26px;">
+                                    <li style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 16px; text-size-adjust: 100%; vertical-align: baseline; background: transparent;">Night Sweats</li>
+                                    <li style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 16px; text-size-adjust: 100%; vertical-align: baseline; background: transparent;">Muscle Aches</li>
+                                    <li style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 16px; text-size-adjust: 100%; vertical-align: baseline; background: transparent;">Sore Throat</li>
+                                    <li style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 16px; text-size-adjust: 100%; vertical-align: baseline; background: transparent;">Swollen Lymph Nodes</li>
+                                    <li style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 16px; text-size-adjust: 100%; vertical-align: baseline; background: transparent;">Mouth Ulcers</li>
+                                  </ul>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="u-accordion-item">
+                    <a class="u-accordion-link u-active-palette-1-base u-button-style u-hover-palette-1-base u-white u-accordion-link-10" id="link-1c53" aria-controls="1c53" aria-selected="false">
+                      <span class="u-accordion-link-text"> How is HIV passed from one person to another?</span><span class="u-accordion-link-icon u-icon u-text-palette-1-light-2 u-icon-10"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xlink:href="#svg-8b16"></use></svg><svg class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-8b16"><path d="M8,10.7L1.6,5.3c-0.4-0.4-1-0.4-1.3,0c-0.4,0.4-0.4,0.9,0,1.3l7.2,6.1c0.1,0.1,0.4,0.2,0.6,0.2s0.4-0.1,0.6-0.2l7.1-6
+	c0.4-0.4,0.4-0.9,0-1.3c-0.4-0.4-1-0.4-1.3,0L8,10.7z"></path></svg></span>
+                    </a>
+                    <div class="u-accordion-pane u-container-style u-white u-accordion-pane-10" id="1c53" aria-labelledby="link-1c53">
+                      <div class="u-container-layout u-container-layout-12">
+                        <div class="fr-view u-clearfix u-rich-text u-text">
+                          <p>HIV (human immunodeficiency virus) is a virus that attacks the body’s immune system. If HIV is not treated, it can lead to AIDS (acquired immunodeficiency syndrome). There is currently no effective cure. Once people get HIV, they have it for life. With proper medical care, HIV can be controlled. People with HIV who get effective HIV treatment can live long, healthy lives and protect their partners. </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="u-accordion-item">
+                    <a class="u-accordion-link u-active-palette-1-base u-button-style u-hover-palette-1-base u-white u-accordion-link-11" id="link-535b" aria-controls="535b" aria-selected="false">
+                      <span class="u-accordion-link-text"> What body fluids transmit HIV?</span><span class="u-accordion-link-icon u-icon u-text-palette-1-light-2 u-icon-11"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xlink:href="#svg-b3e0"></use></svg><svg class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-b3e0"><path d="M8,10.7L1.6,5.3c-0.4-0.4-1-0.4-1.3,0c-0.4,0.4-0.4,0.9,0,1.3l7.2,6.1c0.1,0.1,0.4,0.2,0.6,0.2s0.4-0.1,0.6-0.2l7.1-6
+	c0.4-0.4,0.4-0.9,0-1.3c-0.4-0.4-1-0.4-1.3,0L8,10.7z"></path></svg></span>
+                    </a>
+                    <div class="u-accordion-pane u-container-style u-white u-accordion-pane-11" id="535b" aria-labelledby="link-535b">
+                      <div class="u-container-layout u-container-layout-13">
+                        <div class="fr-view u-clearfix u-rich-text u-text">
+                          <p>Only certain body fluids from a person who has HIV can transmit HIV. These fluids include:&nbsp;</p>
+                          <p>
+                            <br>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="u-accordion-item">
+                    <a class="u-accordion-link u-active-palette-1-base u-button-style u-hover-palette-1-base u-white u-accordion-link-12" id="link-b7bc" aria-controls="b7bc" aria-selected="false">
+                      <span class="u-accordion-link-text">Question</span><span class="u-accordion-link-icon u-icon u-text-palette-1-light-2 u-icon-12"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xlink:href="#svg-f748"></use></svg><svg class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-f748"><path d="M8,10.7L1.6,5.3c-0.4-0.4-1-0.4-1.3,0c-0.4,0.4-0.4,0.9,0,1.3l7.2,6.1c0.1,0.1,0.4,0.2,0.6,0.2s0.4-0.1,0.6-0.2l7.1-6
+	c0.4-0.4,0.4-0.9,0-1.3c-0.4-0.4-1-0.4-1.3,0L8,10.7z"></path></svg></span>
+                    </a>
+                    <div class="u-accordion-pane u-container-style u-white u-accordion-pane-12" id="b7bc" aria-labelledby="link-b7bc">
+                      <div class="u-container-layout u-container-layout-14">
+                        <div class="fr-view u-clearfix u-rich-text u-text">
+                          <p>Answer. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id suscipit ex. Suspendisse rhoncus laoreet purus quis elementum. Phasellus sed efficitur dolor, et ultricies sapien. Quisque fringilla sit amet dolor commodo efficitur. Aliquam et sem odio. In ullamcorper nisi nunc, et molestie ipsum iaculis sit amet.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+   <footer class="u-align-center u-clearfix u-container-align-center u-footer u-grey-80 u-footer" id="sec-8455" style="margin-top: -80px;">
+    <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">Marion County Public Health Department © 2024</p>
+    </div>
+</footer>
+  
+</body></html>  

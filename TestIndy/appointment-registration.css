@@ -1,0 +1,52 @@
+header{
+  position: sticky;
+  top: 0;
+  z-index: 99999;
+  background-color: white;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+}
+@media only screen and (max-width: 768px) {
+  header{
+    position: unset;
+  }
+}
+
+.u-section-1 {
+  background-image: linear-gradient(0deg, rgba(31,134,231,0.85), rgba(31,134,231,0.85)), url('/images/many-pills.png');
+  background-position: 50% 50%;
+}
+
+.u-section-1 .u-sheet-1 {
+  min-height: 951px;
+}
+
+.u-section-1 .u-custom-html-1 {
+  height: auto;
+  min-height: 781px;
+  margin-top: 33px;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 784px;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 601px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 451px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 284px;
+  }
+}
